@@ -24,7 +24,11 @@ Traveller.prototype.getJourneysByTransport = function (transport) {
 };
 
 Traveller.prototype.getJourneysByMinDistance = function (minDistance) {
-
+  const minDistanceList = this.journeys.filter((journey) => {
+    return journey.distance > minDistance;
+  });
+  console.log(`This is ${minDistanceList}`);
+  return minDistanceList
 };
 
 Traveller.prototype.calculateTotalDistanceTravelled = function () {
